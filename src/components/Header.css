@@ -1,0 +1,77 @@
+/* BurgerMenu.css */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-color: black;
+  }
+  
+  .header {
+    padding: 30px;
+    width: 100%;
+    display: flex;
+    background-color: white;
+    justify-content: flex-end;
+  }
+  
+  .menu {
+    display: flex;
+  }
+  
+  .menu li {
+    margin: 0 25px 0 0;
+    list-style: none;
+  }
+  
+  .menu li a {
+    text-decoration: none;
+    color: #1f1f1f;
+    line-height: 100%;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  
+  .burger__icon {
+    width: 30px;
+    height: 22px;
+    position: relative;
+    cursor: pointer;
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    .burger__icon {
+      display: block;
+    }
+  
+    .menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+      height: 100%;
+      width: 100%;
+      background-color: white;
+      flex-direction: column;
+      padding: 30px;
+    }
+  
+    .menu li {
+      margin: 0 0 20px 0;
+    }
+  
+    .menu.active {
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  
